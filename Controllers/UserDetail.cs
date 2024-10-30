@@ -1,7 +1,6 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using GraphQlApi.Repository.Interfaces;
-using System.Security.Cryptography;
 
 namespace GraphQlApi.Controllers;
 
@@ -82,47 +81,19 @@ public class UserMutation : ObjectGraphType
     }
 }
 
-//public class UserMutation : ObjectGraphType
-//{
-//    public UserMutation(IUserService userService)
-//    {
-//        //Field<UserDetailType>("createHuman")
-//        //    .Argument<NonNullGraphType<UserDetailInputType>>("user")
-//        //    .Resolve(async context =>
-//        //    {
-//        //        var human = context.GetArgument<UserDetail>("user");
-//        //        return await userService.Create(human);
-//        //    });
 
-//        FieldAsync<UserDetailType>(
-//           "createHuman",
-//           arguments: new QueryArguments(new QueryArgument<NonNullGraphType<UserDetailInputType>> { Name = "user" }),
-//           resolve: async context =>
-//           {
-//               var human = context.GetArgument<UserDetail>("user");
-//               return await userService.Create(human);
-//           });
-//    }
-
-
-    //public UserMutation(IUserService userService)
-    //{
-    //    Field<UserDetailType>(
-    //        "createUser",
-    //        arguments: new QueryArguments(
-    //            new QueryArgument<NonNullGraphType<UserDetailInputType>> { Name = "user" }
-    //        ),
-    //        resolve: context =>
-    //        {
-    //            var userInput = context.GetArgument<UserDetail>("user");
-    //            var userDetail = new UserDetail
-    //            {
-    //                FirstName = userInput.FirstName,
-    //                LastName = userInput.LastName,
-    //                Email = userInput.Email,
-    //                Phone = userInput.Phone
-    //            };
-    //            return userService.Create(userDetail);
-    //        }
-    //    );
-    //}
+//-------------------------------------Sample query --------------------------------------------------
+//mutation {
+//  createUser(user: {
+//firstName: "vivek",
+//    lastName: "ss",
+//    email: "john.doe@example0a.com",
+//    phone: "123-456-7890"
+//  }) {
+//    id
+//    firstName
+//    lastName
+//    email
+//    phone
+//  }
+//}
